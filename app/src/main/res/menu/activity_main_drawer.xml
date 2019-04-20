@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group
+        android:id="@+id/teams"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_equipos"
+            android:icon="@drawable/ic_people_black"
+            android:title="Equipos" />
+        <item
+            android:id="@+id/nav_crearAnyadirEquipos"
+            android:icon="@drawable/ic_group_add_blackdp"
+            android:title="Añadir Equipos" />
+    </group>
+    <group
+        android:id="@+id/actividades"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_peticiones"
+            android:icon="@drawable/ic_call_made_black_dp"
+            android:title="Peticiones" />
+
+        <item
+            android:id="@+id/nav_altaActividad"
+            android:icon="@drawable/ic_event_black_dp"
+            android:title="Alta actividad" />
+    </group>
+    <item
+        android:id="@+id/nav_perfil"
+        android:icon="@drawable/ic_person_black"
+        android:title="Perfil" />
+
+
+</menu>
