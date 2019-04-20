@@ -23,6 +23,7 @@ public class Login extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
+
         Button bto_registro = findViewById(R.id.bto_registro);
         bto_registro.setOnClickListener(new View.OnClickListener() {
             @Override
