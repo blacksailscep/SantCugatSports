@@ -20,7 +20,6 @@ import com.google.gson.Gson;
 import com.sancugat.cepsoft.santcugatsports.API.Api;
 import com.sancugat.cepsoft.santcugatsports.ApiService.EntidadService;
 import com.sancugat.cepsoft.santcugatsports.Entities.Entidad;
-import com.sancugat.cepsoft.santcugatsports.Entities.Equipo;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -70,22 +69,22 @@ public class RegistroActivity extends Activity {
             @Override
             public void onClick(View v) {
 
-                /*if (!nombre.getText().toString().isEmpty()
+                if (!nombre.getText().toString().isEmpty()
                         || !correo.getText().toString().isEmpty()
                         || !contrasenya.getText().toString().isEmpty()
                         || !temporada.getText().toString().isEmpty()
                         || !direccion.getText().toString().isEmpty()
-                        || !nif.getText().toString().isEmpty() ) {*/
+                        || !nif.getText().toString().isEmpty() ) {
 
                     Entidad entidad = new Entidad();
 
                     entidad.setNombre(nombre.getText().toString());
                     entidad.setContrasenya(contrasenya.getText().toString());
-                    /*entidad.setCorreo(correo.getText().toString());
+                    entidad.setCorreo(correo.getText().toString());
                     entidad.setDireccion(direccion.getText().toString());
                     entidad.setFoto(pathPhoto);
                     entidad.setNif(nif.getText().toString());
-                    entidad.setTemporada(Integer.parseInt(temporada.getText().toString()));*/
+                    entidad.setTemporada(Integer.parseInt(temporada.getText().toString()));
 
                     EntidadService entidadService = Api.getApi().create(EntidadService.class);
                     Call<Entidad> entityCall = entidadService.insertEntidad(entidad);
@@ -95,7 +94,7 @@ public class RegistroActivity extends Activity {
                             switch (response.code()) {
                                 case 201:
                                     Entidad entidad = response.body();
-                                    startActivity(new Intent(RegistroActivity.this,MainActivity.class));
+                                    startActivity(new Intent(RegistroActivity.this,Login.class));
                                     EntidadManager.setEntidad(entidad);
                                     break;
                                 case 400:
@@ -117,10 +116,10 @@ public class RegistroActivity extends Activity {
                         }
                     });
 
-                /*} else {
+                } else {
                     Toast.makeText(RegistroActivity.this.getApplication(),
                             "Faltan rellenar datos", Toast.LENGTH_LONG).show();
-                }*/
+                }
 
             }
         });

@@ -9,6 +9,7 @@ import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface EntidadService {
@@ -23,6 +24,9 @@ public interface EntidadService {
 
     @POST("api/Entidads")
     Call<Entidad> insertEntidad(@Body Entidad entidad);
+
+    @PUT("api/Entidads/{id}")
+    Call<Entidad> updatetEntidad(@Path("id") int id,@Body Entidad entidad);
 
     @DELETE("api/Entidads/{id}")
     Call<Entidad> deleteEntidad(@Path("id") int id);

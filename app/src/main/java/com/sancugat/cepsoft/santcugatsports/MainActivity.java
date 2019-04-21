@@ -16,9 +16,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.sancugat.cepsoft.santcugatsports.Fragments.Actividades;
+import com.sancugat.cepsoft.santcugatsports.Fragments.Perfil;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener ,Actividades.OnFragmentInteractionListener{
+        implements NavigationView.OnNavigationItemSelectedListener ,Actividades.OnFragmentInteractionListener,Perfil.OnFragmentInteractionListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,6 +101,8 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_perfil) {
 
+            fragment = new Perfil();
+            fragmentSeleccionado=true;
         }
 
         if(fragmentSeleccionado)

@@ -51,6 +51,8 @@ public class Login extends Activity {
                 entityCall.enqueue(new Callback<Entidad>() {
                     @Override
                     public void onResponse(Call<Entidad> call, Response<Entidad> response) {
+                        Gson gson=null;
+                        MensajeError mensajeError=null;
                         switch (response.code()) {
                             case 200:
                                 Entidad entidad = response.body();
@@ -58,11 +60,19 @@ public class Login extends Activity {
                                 startActivity(new Intent(Login.this,MainActivity.class));
                                 break;
                             case 400:
-                                Gson gson= new Gson();
-                                MensajeError mensajeError = gson.fromJson(response.errorBody().charStream(),MensajeError.class);
+                                gson= new Gson();
+                                mensajeError = gson.fromJson(response.errorBody().charStream(),MensajeError.class);
+                                Toast.makeText(getApplicationContext(),mensajeError.getMensaje(), Toast.LENGTH_LONG).show();
+                                break;
+                            case 401:
+                                gson= new Gson();
+                                mensajeError = gson.fromJson(response.errorBody().charStream(),MensajeError.class);
                                 Toast.makeText(getApplicationContext(),mensajeError.getMensaje(), Toast.LENGTH_LONG).show();
                                 break;
                             default:
+                                gson= new Gson();
+                                mensajeError = gson.fromJson(response.errorBody().charStream(),MensajeError.class);
+                                Toast.makeText(getApplicationContext(),mensajeError.getMensaje(), Toast.LENGTH_LONG).show();
                                 break;
                         }
                     }
