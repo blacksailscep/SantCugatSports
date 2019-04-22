@@ -68,14 +68,12 @@ public class Equip extends Fragment {
         // Required empty public constructor
     }
 
-    /*public Equip(Equipo equipo) {
-        this.equipo = equipo;
-    }
-    */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
+
         View view = inflater.inflate(R.layout.fragment_equip, container, false);
         nombre = (TextView) view.findViewById(R.id.txtNombreEquipo);
         deporte = (TextView) view.findViewById(R.id.txtDeporte);
