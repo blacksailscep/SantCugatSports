@@ -68,6 +68,8 @@ public class Equip extends Fragment {
         // Required empty public constructor
     }
 
+    //Recibe un Equipo.
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -99,6 +101,20 @@ public class Equip extends Fragment {
         sex.setText(sexo.getNombre());
         ActividadesEquiposAdapter adapter = new ActividadesEquiposAdapter(this.getContext(), R.layout.actividades_list, equipo.getLstAct_Concedidas());
         listAct.setAdapter(adapter);
+
+        buttonAceptar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Abre una actividad y le pasamos una actividad.
+            }
+        });
+
+        buttonCancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //vuelve a la pantalla anterior.
+            }
+        });
         return view;
     }
     private void cargarDatos(){

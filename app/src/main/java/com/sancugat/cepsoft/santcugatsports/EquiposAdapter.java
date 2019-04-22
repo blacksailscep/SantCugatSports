@@ -50,7 +50,7 @@ public class EquiposAdapter extends RecyclerView.Adapter<EquiposAdapter.EquipoVi
         equipoViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Le pasamos un equipo por parametro
+                //Le pasamos un equipo por parametro al fracment Equip
             }
         });
         if(EntidadManager.getEntidad().getFoto()!=null) {

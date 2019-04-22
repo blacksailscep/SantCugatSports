@@ -22,7 +22,7 @@ public class ActividadesEquiposAdapter extends ArrayAdapter<ArrayList<Act_conced
         this.lstAct_Concedidas = lstAct_Concedidas;
     }
 
-    /*
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context
@@ -33,6 +33,6 @@ public class ActividadesEquiposAdapter extends ArrayAdapter<ArrayList<Act_conced
 
         return rowView;
     }
-    */
+
 }
 

@@ -59,7 +59,7 @@ public class ListaEquipos extends Fragment {
         butonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //Abre el fracment Alta Equipo
             }
         });
         return view;
