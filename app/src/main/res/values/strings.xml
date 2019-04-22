@@ -7,6 +7,9 @@
     <string name="nav_header_subtitle">cep@aulacep.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="activitats">ACTIVIDADES ACEPTADAS</string>
+    <string name="aceptar">OK</string>
+    <string name="cancelar">Cancelar</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
