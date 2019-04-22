@@ -87,4 +87,12 @@ public class Equipo {
     public void setFoto(String foto) {
         this.foto = foto;
     }
+
+    public ArrayList<Act_concedida> getLstAct_Concedidas() {
+        return lstAct_Concedidas;
+    }
+
+    public void setLstAct_Concedidas(ArrayList<Act_concedida> lstAct_Concedidas) {
+        this.lstAct_Concedidas = lstAct_Concedidas;
+    }
 }
