@@ -10,6 +10,8 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -149,11 +151,18 @@ public class RegistroActivity extends Activity {
             }
         }
     }
+    private RoundedBitmapDrawable CreateRoundedImageBitmap(Bitmap bitmap)
+    {
+        RoundedBitmapDrawable roundedBitmapDrawable = RoundedBitmapDrawableFactory.create(getResources(), bitmap);
+        roundedBitmapDrawable.setCircular(true);
 
+        return roundedBitmapDrawable;
+    }
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK) {
             photo = (Bitmap) data.getExtras().get("data");
-            imageView.setImageBitmap(photo);
+            RoundedBitmapDrawable drawable = CreateRoundedImageBitmap(photo);
+            imageView.setImageDrawable(drawable);
             pathPhoto = saveToInternalStorage(photo);
         }
     }
